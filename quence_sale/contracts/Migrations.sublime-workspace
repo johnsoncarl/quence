@@ -1,0 +1,382 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"pa",
+				"padding-top\tproperty"
+			],
+			[
+				"ma",
+				"man22invisible"
+			],
+			[
+				"file",
+				"filename"
+			],
+			[
+				"re",
+				"request"
+			],
+			[
+				"app",
+				"app_root"
+			],
+			[
+				"tran",
+				"trainPath"
+			],
+			[
+				"blok",
+				"blockchain"
+			],
+			[
+				"mine",
+				"mineBlock"
+			],
+			[
+				"pre",
+				"previousHash"
+			],
+			[
+				"temp",
+				"tempHashes"
+			],
+			[
+				"previous",
+				"previousHash"
+			],
+			[
+				"ret",
+				"returnDbCopy"
+			],
+			[
+				"time",
+				"timestamp"
+			],
+			[
+				"jso",
+				"jsonNotation"
+			],
+			[
+				"b",
+				"block"
+			],
+			[
+				"add",
+				"add_new_transactions"
+			],
+			[
+				"Block",
+				"Blockchain"
+			],
+			[
+				"block",
+				"blockchain"
+			],
+			[
+				"B",
+				"Blockchain"
+			],
+			[
+				"gene",
+				"genesisBlock"
+			],
+			[
+				"train_",
+				"train_build_str_df"
+			],
+			[
+				"data",
+				"data_all"
+			],
+			[
+				"tree",
+				"tree_classifier_for_damage"
+			],
+			[
+				"cla",
+				"classifier"
+			],
+			[
+				"tar",
+				"tar_test"
+			],
+			[
+				"clas",
+				"clasifier"
+			],
+			[
+				"tra",
+				"train_test_split"
+			],
+			[
+				"gro",
+				"group2"
+			],
+			[
+				"grou",
+				"group1"
+			],
+			[
+				"gr",
+				"group1"
+			],
+			[
+				"bat",
+				"batch_size"
+			],
+			[
+				"Y",
+				"Y_train"
+			],
+			[
+				"X",
+				"X_train"
+			],
+			[
+				"cv",
+				"cv_results"
+			],
+			[
+				"kf",
+				"kfold"
+			],
+			[
+				"model",
+				"model_selection"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"install pa",
+				"Package Control: Install Package"
+			],
+			[
+				"install ",
+				"Install Package Control"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 159.319152832,
+		"history":
+		[
+			"sudo su"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/aman/hackerEarthProblems/machineLearning/ML#6-attempt2/ML#6-jun162018/a490e594-6-Dataset/Dataset/building.py",
+		"/home/aman/web_programming/web_pages/Airlines/templates/login.html",
+		"/home/aman/web_programming/web_pages/Airlines/application.py",
+		"/home/aman/cs50/finance/application.py",
+		"/home/aman/scratch2.py",
+		"/home/aman/Desktop/test_email.csv",
+		"/home/aman/projects/emailBot60/templates/index.html",
+		"/home/aman/projects/emailBot60/templates/upload_successful.html",
+		"/home/aman/projects/emailBot60/templates/sending.html",
+		"/home/aman/projects/emailBot60/application.py",
+		"/home/aman/area_of_triangle.py",
+		"/home/aman/web_programming/loginSystem/login/connect.php",
+		"/home/aman/web_programming/loginSystem/login/register.php",
+		"/home/aman/cev_invitation.html",
+		"/home/aman/Downloads/cev_reminder02.html",
+		"/home/aman/cev_reminder.html",
+		"/home/aman/linearSearch.c",
+		"/home/aman/quickSort.c",
+		"/home/aman/web_programming/loginSystem/login/login.html",
+		"/home/aman/scratch.py",
+		"/home/aman/binarySearch.c",
+		"/home/aman/queue.c",
+		"/home/aman/stack.c",
+		"/home/aman/Desktop/stack.c",
+		"/home/aman/Downloads/PSD2HTML_Halloween_freebie/PSD2HTML_Halloween_freebie/Halloween_template/markup/email-responsive/index.html",
+		"/home/aman/web_programming/email_template/Untitled/HTML Email Templates/01/Promotional Email Template colors/Promotional Email Template Blue/index.html",
+		"/home/aman/web_programming/loginSystem/login/styles.css",
+		"/home/aman/test_email.csv",
+		"/home/aman/ML/Svnit-ml/train.csv",
+		"/home/aman/hackerEarthProblems/machineLearning/dat.py",
+		"/home/aman/ml.py",
+		"/home/aman/projects/profile/_includes/head.html",
+		"/home/aman/projects/profile/_includes/index_head.html",
+		"/home/aman/ML/digit_recognizer-kaggle/test.csv",
+		"/home/aman/projects/profile/_layouts/default.html",
+		"/home/aman/projects/profile/_layouts/blog.html",
+		"/home/aman/projects/profile/index.html",
+		"/home/aman/hackerEarthProblems/machineLearning/ML#6-attempt2/ML#6-jun162018/a490e594-6-Dataset/Dataset/model.py",
+		"/home/aman/MLSS/kerasNN.py",
+		"/home/aman/projects/digifest2018/Projects/digifest2k18/crypto/blockchain.py",
+		"/home/aman/Blockchain/cryptos/blockchain.py",
+		"/home/aman/cs50/finance/templates/layout.html",
+		"/home/aman/cs50/finance/templates/login.html",
+		"/home/aman/Downloads/text.py",
+		"/home/aman/Downloads/blockchain.py",
+		"/home/aman/Blockchain/hackernoon/blockchain.py",
+		"/home/aman/Blockchain/hackernoon/app.py",
+		"/home/aman/Blockchain/cryptos/app.py",
+		"/home/aman/cs50/finance/helpers.py",
+		"/home/aman/Blockchain/cryptos/blockchain",
+		"/home/aman/hackerEarthProblems/machineLearning/model.py",
+		"/home/aman/MLSS/implement_numpy.py",
+		"/home/aman/cs50/web_programming/lecture_0/project0/index.html",
+		"/home/aman/hackerEarthProblems/machineLearning/pytorch_nn_skeleton.py",
+		"/home/aman/web_programming/Books/code.html",
+		"/home/aman/web_programming/Books/index.html",
+		"/home/aman/web_programming/web_pages/hostel_room/register.html",
+		"/home/aman/Downloads/Documents/Hostelsfloorspreferenceorder.csv.html",
+		"/home/aman/web_programming/forumOnFlask/templates/register.html",
+		"/home/aman/web_programming/forumOnFlask/templates/layout.html",
+		"/home/aman/web_programming/forumOnFlask/application.py"
+	],
+	"find":
+	{
+		"height": 27.6595744681
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.6595744681
+	},
+	"input":
+	{
+		"height": 62.7659574468
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "Migrations.sublime-project",
+	"replace":
+	{
+		"height": 51.0638297872
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 292.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
