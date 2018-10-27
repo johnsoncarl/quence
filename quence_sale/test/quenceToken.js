@@ -51,9 +51,9 @@ contract('quenceToken', function(accounts)
 
 					assert.equal(receipt.logs.length, 1, 'Triggering only one event');
 					assert.equal(receipt.logs[0].event, 'Transfer', "the triggered event is the TRANSFER one");
-					assert.equal(receipt.logs[0]._from , accounts[0], ' the sender is account zero');
-					assert.equal(receipt.logs[0]._to , accounts[1], ' the receiver is account one ');
-					assert.equal(receipt.logs[0]._value , 250000, ' The amount transferred is 250000');
+					assert.equal(receipt.logs[0].args._from , accounts[0], ' the sender is account zero');
+					assert.equal(receipt.logs[0].args._to , accounts[1], ' the receiver is account one ');
+					assert.equal(receipt.logs[0].args._value , 250000, ' The amount transferred is 250000');
 
 					return tokenInstance.balanceOf(accounts[1]);
 

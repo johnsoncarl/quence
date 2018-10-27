@@ -9,6 +9,14 @@ contract quenceToken{
 
 	uint256 public totalSupply;
 
+	// declaring transfer event (documentation of ERC20 for the reference of the arguments required
+	event Transfer (
+
+		address indexed _from,
+		address indexed _to,
+		uint256 _value
+	);
+
 	// mapping balaceOf
 	mapping(address => uint256) public balanceOf;
 
@@ -26,9 +34,9 @@ contract quenceToken{
 		
 		balanceOf[msg.sender] -= _value;
 		balanceOf[_to] += _value; 
-		
-		// transfer event shuld be fired
-		
+
+		// firing event Transfer
+		Transfer(msg.sender, _to, _value);
 		
 		// boolean shuould be returned
 	}
