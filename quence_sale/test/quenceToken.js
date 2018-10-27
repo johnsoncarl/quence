@@ -45,8 +45,12 @@ contract('quenceToken', function(accounts)
 
 				}).then(assert.fail).catch(function(error) {
 						assert(error.message.indexOf('revert')>=0, 'error message must contain revert');
+						return tokenInstance.transfer.call(accounts[1], 250000, { from : accounts[0]});
+				
+				}).then(function(success){
+						assert.equal(success, true, "It returns True!")
 						return tokenInstance.transfer(accounts[1], 250000, { from : accounts[0]});
-
+				
 				}).then(function(receipt){
 
 					assert.equal(receipt.logs.length, 1, 'Triggering only one event');

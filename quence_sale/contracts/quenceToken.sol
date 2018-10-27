@@ -38,6 +38,7 @@ contract quenceToken{
 		// firing event Transfer
 		Transfer(msg.sender, _to, _value);
 		
-		// boolean shuould be returned
+		// boolean should be returned
+		return true;
 	}
 }
