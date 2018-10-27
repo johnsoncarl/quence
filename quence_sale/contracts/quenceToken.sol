@@ -23,7 +23,11 @@ contract quenceToken{
 		// the function has to have following
 		// exceptions should be raised if the account doesn't have the _value
 		require(balanceOf[msg.sender] >= _value);
+		
 		// transfer event shuld be fired
+		balanceOf[msg.sender] -= _value;
+		balanceOf[_to] += _value;
+		
 		// boolean shuould be returned
 	}
 }
