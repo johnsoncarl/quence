@@ -5,6 +5,7 @@ contract quenceToken{
 	
 	// name and token id
 	string public name = "Quence Token";
+	string public symbol = "QUT";
 
 	uint256 public totalSupply;
 

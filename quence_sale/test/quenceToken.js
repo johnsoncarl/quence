@@ -8,7 +8,10 @@ contract('quenceToken', function(accounts)
 				tokenInstance = instance;
 				return tokenInstance.name();
 			}).then(function(name){
-				assert.equal(name, "Quence Token", "the name is correct")
+				assert.equal(name, "Quence Token", "the name is correct");
+				return tokenInstance.symbol();
+			}).then(function(symbol){
+				assert.equal(symbol, "QUT", "the symbol is correct")
 			});
 		})
 
