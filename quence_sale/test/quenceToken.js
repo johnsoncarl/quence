@@ -42,16 +42,28 @@ contract('quenceToken', function(accounts)
 				tokenInstance = instance;
 				// testing 'require' statement
 				return tokenInstance.transfer.call(accounts[1], 9999999999999999999);
+
 				}).then(assert.fail).catch(function(error) {
 						assert(error.message.indexOf('revert')>=0, 'error message must contain revert');
 						return tokenInstance.transfer(accounts[1], 250000, { from : accounts[0]});
+
 				}).then(function(receipt){
+
+					assert.equal(receipt.logs.length, 1, 'Triggering only one event');
+					assert.equal(receipt.logs[0].event, 'Transfer', "the triggered event is the TRANSFER one");
+					assert.equal(receipt.logs[0]._from , accounts[0], ' the sender is account zero');
+					assert.equal(receipt.logs[0]._to , accounts[1], ' the receiver is account one ');
+					assert.equal(receipt.logs[0]._value , 250000, ' The amount transferred is 250000');
+
 					return tokenInstance.balanceOf(accounts[1]);
+
 				}).then(function(balance){
 					assert.equal(balance.toNumber(), 250000, 'adds amount to the receiver side');
 					return tokenInstance.balanceOf(accounts[0]);
+
 				}).then(function(balance){
 					assert.equal(balance.toNumber(), 750000, 'updates the sender balance');
+
 				});
 		});
 
