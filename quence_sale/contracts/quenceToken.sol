@@ -22,6 +22,7 @@ contract quenceToken{
 	function transfer(address _to, uint256 _value) public returns (bool success){
 		// the function has to have following
 		// exceptions should be raised if the account doesn't have the _value
+		require(balanceOf[msg.sender] >= _value;)
 		// transfer event shuld be fired
 		// boolean shuould be returned
 	}
