@@ -14,8 +14,11 @@ contract('quenceToken', function(accounts)
 															).then(function(totalSupply)
 																	{
 																		assert.equal(totalSupply.toNumber(), 1000000, 'It sets the total supply to 1,000,000');
+																		return tokenInstance.balanceOf(accounts[0]);
 																	}
-																); // latest then() function closing bracket
+																).then(function(adminBalance){
+																	assert.equal(adminBalance.toNumber(), 1000000, 'This thing does allocation of initial supply to the admin account.');
+																}); // latest then() function closing bracket
 					} // function inside it ending 
 
 			); // it function closing bracket 
