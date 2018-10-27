@@ -35,4 +35,19 @@ contract('quenceToken', function(accounts)
 					} // function inside it ending 
 
 			); // it function closing bracket 
+
+
+		it('Transfer Token amount', function(){
+			return quenceToken.deployed().then(function(instance){
+				tokenInstance = instance;
+				// testing 'require' statement
+				return tokenInstance.transfer.call(accounts[1], 9999999999999999999);
+				}).then(assert.fail).catch(function(error) {
+						assert(error.message.indexOf('revert')>=0, 'error message must contain revert');
+
+				})
+		});
+
+
+
 	}) // contract function closing bracket 

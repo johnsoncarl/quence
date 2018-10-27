@@ -16,4 +16,13 @@ contract quenceToken{
 		balanceOf[msg.sender] = _initialSupply;
 		totalSupply = _initialSupply;	//	by ERC20 standards
 	}
+
+
+	// we need to add the transfer function as follows
+	function transfer(address _to, uint256 _value) public returns (bool success){
+		// the function has to have following
+		// exceptions should be raised if the account doesn't have the _value
+		// transfer event shuld be fired
+		// boolean shuould be returned
+	}
 }
