@@ -2,7 +2,17 @@ var quenceToken = artifacts.require("./quenceToken.sol")
 
 contract('quenceToken', function(accounts)
 	{
-		it('to set the total supply when deployed', 
+
+		it('initializing the contracts with the initial values', function(){
+			return quenceToken.deployed().then(function(instance){
+				tokenInstance = instance;
+				return tokenInstance.name();
+			}).then(function(name){
+				assert.equal(name, "Quence Token", "the name is correct")
+			});
+		})
+
+		it('to allocate the initial supply when deployed', 
 				function()
 					{
 						return quenceToken.deployed().then(function(instance)

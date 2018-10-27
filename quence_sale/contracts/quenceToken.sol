@@ -2,6 +2,10 @@ pragma solidity ^0.4.2;
 
 contract quenceToken{
 	// creating constructor
+	
+	// name and token id
+	string public name = "Quence Token";
+
 	uint256 public totalSupply;
 
 	// mapping balaceOf
