@@ -14,10 +14,13 @@ contract quenceToken{
 
 		address indexed _from,
 		address indexed _to,
-		uint256 _value
-	);
+		uint256 _value);
 
-	// approval event
+	// Approval event
+	event Approval(
+			address indexed _owner,
+			address indexed _spender,
+			uint256 _value);
 
 	// mapping balaceOf
 	mapping(address => uint256) public balanceOf;
