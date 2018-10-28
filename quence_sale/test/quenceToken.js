@@ -77,9 +77,11 @@ contract('quenceToken', function(accounts)
 				tokenInstance = instance;
 				// a call to transfer function ** not actually transferring coins
 				return tokenInstance.approve.call(accounts[1], 100, { from : accounts[0]});
+			
 			}).then(function(success){
 				assert.equal(success, true, "Approve returns true");
 				return tokenInstance.approve(accounts[1],100);
+			
 			}).then(function(receipt){
 				assert.equal(receipt.logs.length, 1, 'Triggering only one event');
 				assert.equal(receipt.logs[0].event, 'Approval', "the triggered event is the Approval one");
@@ -89,8 +91,10 @@ contract('quenceToken', function(accounts)
 
 				// returning the allowance value in next then 
 				return tokenInstance.allowance(accounts[0], accounts[1]);
+			
 			}).then(function(allowance){
 				assert.equal(allowance, 100, "for storing the allowance of the delegated transfer");
+			
 			});
 		});
 
@@ -105,16 +109,32 @@ contract('quenceToken', function(accounts)
 
 				// transfering some amount to fromAccount
 				return tokenInstance.transfer(fromAccount, 100, {from : accounts[0]});
+
 			}).then(function(receipt){
 				  return tokenInstance.approve(spendingAccount, 10, {from : fromAccount});
+
 			}).then(function(receipt){
 				return tokenInstance.transferFrom(fromAccount, toAccount, 9999, { from : spendingAccount});
+			
 			}).then(assert.fail).catch(function(error){
 				assert(error.message.indexOf('revert') >= 0, 'cannot transfer the values larger than the balance');
 				// trying to spend amount larger than the approved amount
 				return tokenInstance.transferFrom(fromAccount, toAccount, 20, { from : spendingAccount});
+			
 			}).then(assert.fail).catch(function(error){
 				assert(error.message.indexOf('revert' ) >= 0 , ' cannot transfer amount larger than the allowed amount');
+				return tokenInstance.transferFrom.call(fromAccount, toAccount, 5, { from : spendingAccount});
+			
+			}).then(function(success){
+				assert.equal(success, true);
+				return tokenInstance.transferFrom(fromAccount, toAccount, 5, { from : spendingAccount});
+			}).then(function(receipt){
+				assert.equal(receipt.logs.length, 1, 'Triggering only one event');
+				assert.equal(receipt.logs[0].event, 'Transfer', "the triggered event is the Approval one");
+				assert.equal(receipt.logs[0].args._from , fromAccount, ' the _from account is correct');
+				assert.equal(receipt.logs[0].args._to , toAccount, ' the _to account is corrct ');
+				assert.equal(receipt.logs[0].args._value , 5, ' The allowed aomunt to the spender is correct in this case 5	');
+
 			});
 		});
 
