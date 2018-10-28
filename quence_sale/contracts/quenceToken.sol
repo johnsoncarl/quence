@@ -78,10 +78,13 @@ contract quenceToken{
 		// change balance
 		balanceOf[_from] -= _value;
 		balanceOf[_to] += _value;
+		
 		// update allowance
 		allowance[_from][msg.sender] -= _value;
+		
 		// transfer event
 		Transfer(_from, _to, _value);
+		
 		// return booleaj n j
 		return true;
 	}
