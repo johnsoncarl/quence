@@ -135,6 +135,14 @@ contract('quenceToken', function(accounts)
 				assert.equal(receipt.logs[0].args._to , toAccount, ' the _to account is corrct ');
 				assert.equal(receipt.logs[0].args._value , 5, ' The allowed aomunt to the spender is correct in this case 5	');
 
+				return tokenInstance.balanceOf(fromAccount);
+			}).then(function(balance){
+				assert.equal(balance.toNumber(), 95, 'debits 5 tokens(in this case) from the sending account ');
+				return tokenInstance.balanceOf(toAccount);
+
+			}).then(function(balance){
+				assert.equal(balance.toNumber(), 5, 'credits 5 tokens(in this case) into the receiver account ');
+				
 			});
 		});
 

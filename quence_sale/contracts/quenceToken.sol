@@ -78,6 +78,7 @@ contract quenceToken{
 		// change balance
 		// update allowance
 		// transfer event
+		Transfer(_from, _to, _value);
 		// return booleaj n j
 		return true;
 	}
