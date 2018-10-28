@@ -79,8 +79,16 @@ contract('quenceToken', function(accounts)
 				return tokenInstance.approve.call(accounts[1], 100);
 			}).then(function(success){
 				assert.equal(success, true, "Approve returns true");
+				return tokenInstance.approve(accounts[1],100);
+			}).then(function(receipt){
+				assert.equal(receipt.logs.length, 1, 'Triggering only one event');
+				assert.equal(receipt.logs[0].event, 'Approval', "the triggered event is the Approval one");
+				assert.equal(receipt.logs[0].args._owner , accounts[0], ' the _owner of the tokens');
+				assert.equal(receipt.logs[0].args._spender , accounts[1], ' the _spender of the tokens ');
+				assert.equal(receipt.logs[0].args._value , 100, ' The allowed aomunt to the spender is 100');
+
 			});
-		})
+		});
 
 
 	}) // contract function closing bracket 
