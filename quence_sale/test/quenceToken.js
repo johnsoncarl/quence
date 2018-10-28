@@ -87,6 +87,30 @@ contract('quenceToken', function(accounts)
 				assert.equal(receipt.logs[0].args._spender , accounts[1], ' the _spender of the tokens ');
 				assert.equal(receipt.logs[0].args._value , 100, ' The allowed aomunt to the spender is 100	');
 
+				// returning the allowance value in next then 
+				return tokenInstance.allowance(accounts[0], accounts[1]);
+			}).then(function(allowance){
+				assert.equal(allowance, 100, "for storing the allowance of the delegated transfer");
+			});
+		});
+
+		// transferFrom test 
+
+		it('Handles the delegated transfer', function(){
+			return quenceToken.deployed().then(function(instance){
+				tokenInstance = instance;
+				fromAccount = accounts[2];
+				toAccount = accounts[3];
+				spendingAccount = accounts[4];
+
+				// transfering some amount to fromAccount
+				return tokenInstance.transfer(fromAccount, 100, {from : accounts[0]});
+			}).then(function(receipt){
+				  return tokenInstance.approve(spendingAccount, 10, {from : fromAccount});
+			}).then(function(receipt){
+				return tokenInstance.transferFrom(fromAccount, toAccount, 9999, { from : spendingAccount});
+			}).then(assert.fail).catch(function(error){
+				assert(error.message.indexOf('revert') >= 0, 'cannot transfer the values larger than the balance');
 			});
 		});
 
