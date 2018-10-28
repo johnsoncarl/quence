@@ -51,11 +51,13 @@ contract quenceToken{
 
 	function approve(address _spender, uint256 _value) public returns (bool success){
 		
-		return true;
 		// allowance
 
-		// firing approval event
-		
+		// firing Approval event
+		Approval(msg.sender, _spender, _value);
+
+
+		return true;
 
 	}
 

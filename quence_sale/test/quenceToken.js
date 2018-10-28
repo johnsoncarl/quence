@@ -85,7 +85,7 @@ contract('quenceToken', function(accounts)
 				assert.equal(receipt.logs[0].event, 'Approval', "the triggered event is the Approval one");
 				assert.equal(receipt.logs[0].args._owner , accounts[0], ' the _owner of the tokens');
 				assert.equal(receipt.logs[0].args._spender , accounts[1], ' the _spender of the tokens ');
-				assert.equal(receipt.logs[0].args._value , 100, ' The allowed aomunt to the spender is 100');
+				assert.equal(receipt.logs[0].args._value , 100, ' The allowed aomunt to the spender is 100	');
 
 			});
 		});
