@@ -144,7 +144,7 @@ contract('quenceToken', function(accounts)
 				assert.equal(balance.toNumber(), 5, 'credits 5 tokens(in this case) into the receiver account ');
 				return tokenInstance.allowance(fromAccount, spendingAccount);
 			}).then(function(allowance){
-				assert.equal(allowance, 5 , "the updated allownace becomes 5(in this case)")
+				assert.equal(allowance.toNumber(), 5 , "the updated allownace becomes 5(in this case)")
 			});
 		});
 
