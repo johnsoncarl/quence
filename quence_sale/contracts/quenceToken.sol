@@ -17,6 +17,8 @@ contract quenceToken{
 		uint256 _value
 	);
 
+	// approval event
+
 	// mapping balaceOf
 	mapping(address => uint256) public balanceOf;
 
@@ -41,4 +43,22 @@ contract quenceToken{
 		// boolean should be returned
 		return true;
 	}
+
+	// approve function
+
+	function approve(address _spender, uint256 _value) public returns (bool success){
+		
+		return true;
+		// allowance
+
+		// firing approval event
+		
+
+	}
+
+	
+
+
+	// transferFrom
+
 }
