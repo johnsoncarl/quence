@@ -24,6 +24,7 @@ contract quenceToken{
 
 	// mapping balaceOf
 	mapping(address => uint256) public balanceOf;
+	mapping(address => mapping(address => uint256)) public allowance;
 
 	function quenceToken (uint256 _initialSupply) public{
 		balanceOf[msg.sender] = _initialSupply;
@@ -51,7 +52,8 @@ contract quenceToken{
 
 	function approve(address _spender, uint256 _value) public returns (bool success){
 		
-		// allowance
+		// allowance test case
+		allowance[msg.sender][_spender] = _value;
 
 		// firing Approval event
 		Approval(msg.sender, _spender, _value);

@@ -76,7 +76,7 @@ contract('quenceToken', function(accounts)
 			return quenceToken.deployed().then(function(instance){
 				tokenInstance = instance;
 				// a call to transfer function ** not actually transferring coins
-				return tokenInstance.approve.call(accounts[1], 100);
+				return tokenInstance.approve.call(accounts[1], 100, { from : accounts[0]});
 			}).then(function(success){
 				assert.equal(success, true, "Approve returns true");
 				return tokenInstance.approve(accounts[1],100);
