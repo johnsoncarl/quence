@@ -111,6 +111,10 @@ contract('quenceToken', function(accounts)
 				return tokenInstance.transferFrom(fromAccount, toAccount, 9999, { from : spendingAccount});
 			}).then(assert.fail).catch(function(error){
 				assert(error.message.indexOf('revert') >= 0, 'cannot transfer the values larger than the balance');
+				// trying to spend amount larger than the approved amount
+				return tokenInstance.transferFrom(fromAccount, toAccount, 20, { from : spendingAccount});
+			}).then(assert.fail).catch(function(error){
+				assert(error.message.indexOf('revert' ) >= 0 , ' cannot transfer amount larger than the allowed amount');
 			});
 		});
 

@@ -67,10 +67,11 @@ contract quenceToken{
 
 
 	// transferFrom
-	function transferFrom(address _from, address _to, uint256) public returns (bool success){
+	function transferFrom(address _from, address _to, uint256 _value) public returns (bool success){
 
 		// allowance is big enough
 		// require _from has enough balanceOf
+		require(balanceOf[_from] >= _value);
 		// change balance
 		// update allowance
 		// transfer event
