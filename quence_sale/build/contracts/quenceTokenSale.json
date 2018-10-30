@@ -1,0 +1,174 @@
+{
+  "contractName": "quenceTokenSale",
+  "abi": [
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    }
+  ],
+  "bytecode": "0x6080604052348015600f57600080fd5b50603580601d6000396000f3006080604052600080fd00a165627a7a7230582038c567821986e2d52e12da903746689d7c55164d225afb2fc2b2009fdb9d46c20029",
+  "deployedBytecode": "0x6080604052600080fd00a165627a7a7230582038c567821986e2d52e12da903746689d7c55164d225afb2fc2b2009fdb9d46c20029",
+  "sourceMap": "25:73:0:-;;;53:41;8:9:-1;5:2;;;30:1;27;20:12;5:2;53:41:0;25:73;;;;;;",
+  "deployedSourceMap": "25:73:0:-;;;;;",
+  "source": "pragma solidity ^0.4.2;\n\ncontract quenceTokenSale{\n\n\tfunction quenceTokenSale() public{\n\n\t\t\n\t}\n\n\n}",
+  "sourcePath": "/home/aman/projects/quence/quence_sale/contracts/quenceTokenSale.sol",
+  "ast": {
+    "absolutePath": "/home/aman/projects/quence/quence_sale/contracts/quenceTokenSale.sol",
+    "exportedSymbols": {
+      "quenceTokenSale": [
+        6
+      ]
+    },
+    "id": 7,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:0"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 6,
+        "linearizedBaseContracts": [
+          6
+        ],
+        "name": "quenceTokenSale",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 4,
+              "nodeType": "Block",
+              "src": "86:8:0",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 5,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "quenceTokenSale",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "77:2:0"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 3,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "86:0:0"
+            },
+            "scope": 6,
+            "src": "53:41:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 7,
+        "src": "25:73:0"
+      }
+    ],
+    "src": "0:98:0"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/aman/projects/quence/quence_sale/contracts/quenceTokenSale.sol",
+    "exportedSymbols": {
+      "quenceTokenSale": [
+        6
+      ]
+    },
+    "id": 7,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:0"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 6,
+        "linearizedBaseContracts": [
+          6
+        ],
+        "name": "quenceTokenSale",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 4,
+              "nodeType": "Block",
+              "src": "86:8:0",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 5,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "quenceTokenSale",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "77:2:0"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 3,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "86:0:0"
+            },
+            "scope": 6,
+            "src": "53:41:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 7,
+        "src": "25:73:0"
+      }
+    ],
+    "src": "0:98:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2018-10-30T08:12:06.259Z"
+}
