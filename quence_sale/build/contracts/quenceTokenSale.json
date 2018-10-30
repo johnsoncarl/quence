@@ -2,30 +2,35 @@
   "contractName": "quenceTokenSale",
   "abi": [
     {
-      "inputs": [],
+      "inputs": [
+        {
+          "name": "_tokenContract",
+          "type": "address"
+        }
+      ],
       "payable": false,
       "stateMutability": "nonpayable",
       "type": "constructor"
     }
   ],
-  "bytecode": "0x6080604052348015600f57600080fd5b50603580601d6000396000f3006080604052600080fd00a165627a7a7230582038c567821986e2d52e12da903746689d7c55164d225afb2fc2b2009fdb9d46c20029",
-  "deployedBytecode": "0x6080604052600080fd00a165627a7a7230582038c567821986e2d52e12da903746689d7c55164d225afb2fc2b2009fdb9d46c20029",
-  "sourceMap": "25:73:0:-;;;53:41;8:9:-1;5:2;;;30:1;27;20:12;5:2;53:41:0;25:73;;;;;;",
-  "deployedSourceMap": "25:73:0:-;;;;;",
-  "source": "pragma solidity ^0.4.2;\n\ncontract quenceTokenSale{\n\n\tfunction quenceTokenSale() public{\n\n\t\t\n\t}\n\n\n}",
+  "bytecode": "0x6080604052348015600f57600080fd5b5060405160208060f583398101806040528101908080519060200190929190505050336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555080600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505060358060c06000396000f3006080604052600080fd00a165627a7a72305820a38ff9e80cb4765a21d5f667f52eb58862775225dfaa312dbc0fa2adffcc41990029",
+  "deployedBytecode": "0x6080604052600080fd00a165627a7a72305820a38ff9e80cb4765a21d5f667f52eb58862775225dfaa312dbc0fa2adffcc41990029",
+  "sourceMap": "54:220:1:-;;;127:143;8:9:-1;5:2;;;30:1;27;20:12;5:2;127:143:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;200:10;192:5;;:18;;;;;;;;;;;;;;;;;;230:14;214:13;;:30;;;;;;;;;;;;;;;;;;127:143;54:220;;;;;;",
+  "deployedSourceMap": "54:220:1:-;;;;;",
+  "source": "pragma solidity ^0.4.2;\n\nimport \"./quenceToken.sol\";\n\ncontract quenceTokenSale{\n\n\taddress admin;\n\tquenceToken tokenContract;\n\n\tfunction quenceTokenSale(quenceToken _tokenContract) public{\n\n\n\t\tadmin = msg.sender;\n\t\ttokenContract = _tokenContract;\n\n\t\t// assigning ADMIN\n\t}\n\n\n}",
   "sourcePath": "/home/aman/projects/quence/quence_sale/contracts/quenceTokenSale.sol",
   "ast": {
     "absolutePath": "/home/aman/projects/quence/quence_sale/contracts/quenceTokenSale.sol",
     "exportedSymbols": {
       "quenceTokenSale": [
-        6
+        205
       ]
     },
-    "id": 7,
+    "id": 206,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1,
+        "id": 184,
         "literals": [
           "solidity",
           "^",
@@ -33,7 +38,18 @@
           ".2"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:23:0"
+        "src": "0:23:1"
+      },
+      {
+        "absolutePath": "/home/aman/projects/quence/quence_sale/contracts/quenceToken.sol",
+        "file": "./quenceToken.sol",
+        "id": 185,
+        "nodeType": "ImportDirective",
+        "scope": 206,
+        "sourceUnit": 183,
+        "src": "25:27:1",
+        "symbolAliases": [],
+        "unitAlias": ""
       },
       {
         "baseContracts": [],
@@ -41,22 +57,185 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 6,
+        "id": 205,
         "linearizedBaseContracts": [
-          6
+          205
         ],
         "name": "quenceTokenSale",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
+            "constant": false,
+            "id": 187,
+            "name": "admin",
+            "nodeType": "VariableDeclaration",
+            "scope": 205,
+            "src": "82:13:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 186,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "82:7:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 189,
+            "name": "tokenContract",
+            "nodeType": "VariableDeclaration",
+            "scope": 205,
+            "src": "98:25:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_quenceToken_$182",
+              "typeString": "contract quenceToken"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 188,
+              "name": "quenceToken",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 182,
+              "src": "98:11:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_quenceToken_$182",
+                "typeString": "contract quenceToken"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
             "body": {
-              "id": 4,
+              "id": 203,
               "nodeType": "Block",
-              "src": "86:8:0",
-              "statements": []
+              "src": "186:84:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 197,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 194,
+                      "name": "admin",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 187,
+                      "src": "192:5:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 195,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 220,
+                        "src": "200:3:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 196,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "sender",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "200:10:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "192:18:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 198,
+                  "nodeType": "ExpressionStatement",
+                  "src": "192:18:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 201,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 199,
+                      "name": "tokenContract",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 189,
+                      "src": "214:13:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_quenceToken_$182",
+                        "typeString": "contract quenceToken"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 200,
+                      "name": "_tokenContract",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 191,
+                      "src": "230:14:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_quenceToken_$182",
+                        "typeString": "contract quenceToken"
+                      }
+                    },
+                    "src": "214:30:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_quenceToken_$182",
+                      "typeString": "contract quenceToken"
+                    }
+                  },
+                  "id": 202,
+                  "nodeType": "ExpressionStatement",
+                  "src": "214:30:1"
+                }
+              ]
             },
             "documentation": null,
-            "id": 5,
+            "id": 204,
             "implemented": true,
             "isConstructor": true,
             "isDeclaredConst": false,
@@ -64,43 +243,72 @@
             "name": "quenceTokenSale",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2,
+              "id": 192,
               "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "77:2:0"
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 191,
+                  "name": "_tokenContract",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 204,
+                  "src": "152:26:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_quenceToken_$182",
+                    "typeString": "contract quenceToken"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 190,
+                    "name": "quenceToken",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 182,
+                    "src": "152:11:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_quenceToken_$182",
+                      "typeString": "contract quenceToken"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "151:28:1"
             },
             "payable": false,
             "returnParameters": {
-              "id": 3,
+              "id": 193,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "86:0:0"
+              "src": "186:0:1"
             },
-            "scope": 6,
-            "src": "53:41:0",
+            "scope": 205,
+            "src": "127:143:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 7,
-        "src": "25:73:0"
+        "scope": 206,
+        "src": "54:220:1"
       }
     ],
-    "src": "0:98:0"
+    "src": "0:274:1"
   },
   "legacyAST": {
     "absolutePath": "/home/aman/projects/quence/quence_sale/contracts/quenceTokenSale.sol",
     "exportedSymbols": {
       "quenceTokenSale": [
-        6
+        205
       ]
     },
-    "id": 7,
+    "id": 206,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1,
+        "id": 184,
         "literals": [
           "solidity",
           "^",
@@ -108,7 +316,18 @@
           ".2"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:23:0"
+        "src": "0:23:1"
+      },
+      {
+        "absolutePath": "/home/aman/projects/quence/quence_sale/contracts/quenceToken.sol",
+        "file": "./quenceToken.sol",
+        "id": 185,
+        "nodeType": "ImportDirective",
+        "scope": 206,
+        "sourceUnit": 183,
+        "src": "25:27:1",
+        "symbolAliases": [],
+        "unitAlias": ""
       },
       {
         "baseContracts": [],
@@ -116,22 +335,185 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 6,
+        "id": 205,
         "linearizedBaseContracts": [
-          6
+          205
         ],
         "name": "quenceTokenSale",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
+            "constant": false,
+            "id": 187,
+            "name": "admin",
+            "nodeType": "VariableDeclaration",
+            "scope": 205,
+            "src": "82:13:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 186,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "82:7:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 189,
+            "name": "tokenContract",
+            "nodeType": "VariableDeclaration",
+            "scope": 205,
+            "src": "98:25:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_quenceToken_$182",
+              "typeString": "contract quenceToken"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 188,
+              "name": "quenceToken",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 182,
+              "src": "98:11:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_quenceToken_$182",
+                "typeString": "contract quenceToken"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
             "body": {
-              "id": 4,
+              "id": 203,
               "nodeType": "Block",
-              "src": "86:8:0",
-              "statements": []
+              "src": "186:84:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 197,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 194,
+                      "name": "admin",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 187,
+                      "src": "192:5:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 195,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 220,
+                        "src": "200:3:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 196,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "sender",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "200:10:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "192:18:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 198,
+                  "nodeType": "ExpressionStatement",
+                  "src": "192:18:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 201,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 199,
+                      "name": "tokenContract",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 189,
+                      "src": "214:13:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_quenceToken_$182",
+                        "typeString": "contract quenceToken"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 200,
+                      "name": "_tokenContract",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 191,
+                      "src": "230:14:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_quenceToken_$182",
+                        "typeString": "contract quenceToken"
+                      }
+                    },
+                    "src": "214:30:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_quenceToken_$182",
+                      "typeString": "contract quenceToken"
+                    }
+                  },
+                  "id": 202,
+                  "nodeType": "ExpressionStatement",
+                  "src": "214:30:1"
+                }
+              ]
             },
             "documentation": null,
-            "id": 5,
+            "id": 204,
             "implemented": true,
             "isConstructor": true,
             "isDeclaredConst": false,
@@ -139,30 +521,59 @@
             "name": "quenceTokenSale",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2,
+              "id": 192,
               "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "77:2:0"
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 191,
+                  "name": "_tokenContract",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 204,
+                  "src": "152:26:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_quenceToken_$182",
+                    "typeString": "contract quenceToken"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 190,
+                    "name": "quenceToken",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 182,
+                    "src": "152:11:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_quenceToken_$182",
+                      "typeString": "contract quenceToken"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "151:28:1"
             },
             "payable": false,
             "returnParameters": {
-              "id": 3,
+              "id": 193,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "86:0:0"
+              "src": "186:0:1"
             },
-            "scope": 6,
-            "src": "53:41:0",
+            "scope": 205,
+            "src": "127:143:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 7,
-        "src": "25:73:0"
+        "scope": 206,
+        "src": "54:220:1"
       }
     ],
-    "src": "0:98:0"
+    "src": "0:274:1"
   },
   "compiler": {
     "name": "solc",
@@ -170,5 +581,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.1",
-  "updatedAt": "2018-10-30T08:12:06.259Z"
+  "updatedAt": "2018-10-30T09:00:37.576Z"
 }

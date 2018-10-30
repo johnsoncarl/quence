@@ -11,8 +11,13 @@ contract('quenceTokenSale', function(accounts){
 
 			tokenSaleInstance = instance;
 			return tokenSaleInstance.address;
+		
 		}).then(function(address){
-			assert.notEqual(address, 0x0, 'has some contract address')
-		})
-	})
+			assert.notEqual(address, 0x0, 'has some contract address');
+			return tokenSaleInstance.tokenContract();
+
+		}).then(function(address){
+			assert.notEqual(address, 0x0, 'has some token Contract');
+		});
+	});
 })
