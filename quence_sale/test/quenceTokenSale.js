@@ -1,12 +1,16 @@
+var quenceToken = artifacts.require("./quenceToken.sol");
 var quenceTokenSale = artifacts.require("./quenceTokenSale.sol");
-var tokenPrice = 100000000000000; // the price is in WEI equal to 0.0001 ETH
 
 
 contract('quenceTokenSale', function(accounts){
 
 	var tokenSaleInstance;
+	var admin = accounts[0];
 	var buyer = accounts[1];
+	var tokensAvailable = 750000;
 	var numberOfTokens = 10;
+	var tokenPrice = 100000000000000; // the price is in WEI equal to 0.0001 ETH
+
 
 	it('To initialize the TokenSale contract with the correct values', function(){
 
@@ -28,9 +32,21 @@ contract('quenceTokenSale', function(accounts){
 	});
 
 	it('facilitates the token Buying', function(){
-		return quenceTokenSale.deployed().then(function(instance){
+		return quenceToken.deployed().then(function(instance){
+			// creating  quence token instance
+			tokenInstance = instance;
+
+			return tokenSaleInstance.deployed();
+
+		}).then(function(instance){
+			// creating quence token sale instance
 			tokenSaleInstance = instance;
-			return tokenSaleInstance.buyTokens(numberOfTokens, { from: buyer , value : numberOfTokens*tokenPrice})			
+
+			// transferring 75% of total tokens to token sales contract 
+			return tokenInstance.transfer(tokenSaleInstance.address, tokensAvailable, { from : admin })
+		
+		}).then(function(receipt) {
+			return tokenSaleInstance.buyTokens(numberOfTokens, { from: buyer , value : numberOfTokens*tokenPrice})					
 		
 		}).then(function(receipt){
 			assert.equal(receipt.logs.length, 1, 'Triggering only one event');
