@@ -7,7 +7,7 @@ contract quenceTokenSale{
 	address admin;
 	quenceToken public tokenContract;
 	uint256 public tokenPrice;
-
+	uint256 public tokensSold;
 
 	function quenceTokenSale(quenceToken _tokenContract, uint256 _tokenPrice) public {
 			admin = msg.sender;
@@ -27,6 +27,7 @@ contract quenceTokenSale{
 		// keep track of tokens sold
 		
 		// trigger SELL event
+		tokensSold += _numberOfTokens;
 		
 		// require transfer successful
 	}
