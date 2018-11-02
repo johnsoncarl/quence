@@ -1,5 +1,5 @@
 var quenceTokenSale = artifacts.require("./quenceTokenSale.sol");
-
+var tokenPrice = 100000000000000; // the price is in WEI equal to 0.0001 ETH
 
 contract('quenceTokenSale', function(accounts){
 
@@ -18,6 +18,9 @@ contract('quenceTokenSale', function(accounts){
 
 		}).then(function(address){
 			assert.notEqual(address, 0x0, 'has some token Contract');
+			return tokenSaleInstance.tokenPrice();
+		}).then(function(price){
+			assert.equal(price, tokenPrice, 'the token price is correct');
 		});
 	});
 })
