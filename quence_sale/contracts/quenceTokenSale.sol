@@ -9,6 +9,8 @@ contract quenceTokenSale{
 	uint256 public tokenPrice;
 	uint256 public tokensSold;
 
+	event Sell(address _buyer, uint256 _amount);
+
 	function quenceTokenSale(quenceToken _tokenContract, uint256 _tokenPrice) public {
 			admin = msg.sender;
 			tokenContract = _tokenContract;
@@ -28,6 +30,8 @@ contract quenceTokenSale{
 		
 		// trigger SELL event
 		tokensSold += _numberOfTokens;
+
+		Sell(msg.sender, _numberOfTokens);
 		
 		// require transfer successful
 	}

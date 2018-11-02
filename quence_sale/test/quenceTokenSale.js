@@ -33,6 +33,11 @@ contract('quenceTokenSale', function(accounts){
 			return tokenSaleInstance.buyTokens(numberOfTokens, { from: buyer , value : numberOfTokens*tokenPrice})			
 		
 		}).then(function(receipt){
+			assert.equal(receipt.logs.length, 1, 'Triggering only one event');
+			assert.equal(receipt.logs[0].event, 'Sell', "the triggered event is the SELL one");
+			assert.equal(receipt.logs[0].args._buyer , buyer, ' logs the account that purchase the tokens');
+			assert.equal(receipt.logs[0].args._amount , numberOfTokens, ' logs the number of tokens purchased ');
+
 			return tokenSaleInstance.tokensSold();
 		
 		}).then(function(amount){
