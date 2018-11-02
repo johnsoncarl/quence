@@ -57,12 +57,15 @@ contract('quenceTokenSale', function(accounts){
 			return tokenSaleInstance.tokensSold();
 		
 		}).then(function(amount){
-			assert.equal(amount.toNumber(), numberOfTokens, 'increments the no of tokens sold')
+			assert.equal(amount.toNumber(), numberOfTokens, 'increments the no of tokens sold');
 		
 			// trying to buy tokens different from original ether value , to prevent client from underpaying
-			return tokenSaleInstance.buyTokens(numberOfTokens , { from : buyer , value : 1 });
+//			return tokenSaleInstance.buyTokens(numberOfTokens , { from : buyer , value : 1 });
+//		}).then(assert.fail).catch(function(error){
+//			assert(error.message.indexOf("revert") >= 0 , 'msg.value must have equal no in wei');
+			return tokenSaleInstance.buyTokens(800000, { from : buyer, value : numberOfTokens*tokenPrice });		
 		}).then(assert.fail).catch(function(error){
-			assert(error.message.indexOf("revert") >= 0 , 'msg.value must have equal no in wei');
+			assert(error.message.indexOf("revert") >= 0 , 'cannot purchase more tokens than available');
 		});
-	})
-})
+	});
+});

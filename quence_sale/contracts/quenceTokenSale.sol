@@ -27,10 +27,10 @@ contract quenceTokenSale{
 	function buyTokens( uint256 _numberOfTokens) public payable{
 
 		// require value equal to tokens
-		require( msg.value == mul(_numberOfTokens, tokenPrice));
+		//require( msg.value == mul(_numberOfTokens, tokenPrice));
 
-		// require enough no of tokens
-		
+		// require the contract has enough no of tokens
+		require( tokenContract.balanceOf(this) >= _numberOfTokens);
 		// keep track of tokens sold
 		
 		// trigger SELL event
