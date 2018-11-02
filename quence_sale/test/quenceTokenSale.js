@@ -43,6 +43,10 @@ contract('quenceTokenSale', function(accounts){
 		}).then(function(amount){
 			assert.equal(amount.toNumber(), numberOfTokens, 'increments the no of tokens sold')
 		
-		})
+			// trying to buy tokens different from original ether value , to prevent client from underpaying
+			return tokenSaleInstance.buyTokens(numberOfTokens , { from : buyer , value : 1 });
+		}).then(assert.fail).catch(function(error){
+			assert(error.message.indexOf("revert") >= 0 , 'msg.value must have equal no in wei');
+		});
 	})
 })
