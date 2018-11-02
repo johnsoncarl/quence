@@ -23,4 +23,18 @@ contract('quenceTokenSale', function(accounts){
 			assert.equal(price, tokenPrice, 'the token price is correct');
 		});
 	});
+
+	it('facilitates the token Buying', function(){
+		return quenceTokenSale.deployed().then(function(instance){
+			tokenSaleInstance = instance;
+			var numberOfTokens = 10;
+			var value = numberOfTokens*tokenPrice;
+
+			return tokenSaleInstance.buyTokens(numberOfTokens, { from: buyer , value : value})			
+		}).then(function(receipt){
+			return tokenSaleInstance.tokensSold();
+		}).then(function(amount){
+			assert.equal(amount.toNumber(), numberOfTokens, 'increments the no of tokens sold')
+		})
+	})
 })

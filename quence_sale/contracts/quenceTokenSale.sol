@@ -17,4 +17,18 @@ contract quenceTokenSale{
 
 	}
 
+
+	function buyTokens( uint256 _numberOfTokens) public payable{
+
+		// require value equal to tokens
+		
+		// require enough no of tokens
+		
+		// keep track of tokens sold
+		
+		// trigger SELL event
+		
+		// require transfer successful
+	}
+
 }
