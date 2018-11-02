@@ -1,9 +1,12 @@
 var quenceTokenSale = artifacts.require("./quenceTokenSale.sol");
 var tokenPrice = 100000000000000; // the price is in WEI equal to 0.0001 ETH
 
+
 contract('quenceTokenSale', function(accounts){
 
 	var tokenSaleInstance;
+	var buyer = accounts[1];
+
 
 	it('To initialize the TokenSale contract with the correct values', function(){
 
