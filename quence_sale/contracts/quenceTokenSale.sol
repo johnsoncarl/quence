@@ -5,16 +5,11 @@ import "./quenceToken.sol";
 contract quenceTokenSale{
 
 	address admin;
-	quenceToken tokenContract;
+	quenceToken public tokenContract;
 
-	function quenceTokenSale(quenceToken _tokenContract) public{
-
-
-		admin = msg.sender;
-		tokenContract = _tokenContract;
-
-		// assigning ADMIN
+	function quenceTokenSale(quenceToken _tokenContract) public {
+			admin = msg.sender;
+			tokenContract = _tokenContract;
 	}
-
 
 }

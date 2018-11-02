@@ -5,7 +5,7 @@ contract('quenceTokenSale', function(accounts){
 
 	var tokenSaleInstance;
 
-	it('To initialize the contact with the correct values', function(){
+	it('To initialize the TokenSale contract with the correct values', function(){
 
 		return quenceTokenSale.deployed().then(function(instance){
 
