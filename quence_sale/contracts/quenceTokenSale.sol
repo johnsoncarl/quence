@@ -20,10 +20,15 @@ contract quenceTokenSale{
 	}
 
 
+	function mul(uint x, uint y) internal pure returns (uint z) {
+        require(y == 0 || (z = x * y) / y == x);
+    }
+
 	function buyTokens( uint256 _numberOfTokens) public payable{
 
 		// require value equal to tokens
-		
+		require( msg.value == mul(_numberOfTokens, tokenPrice));
+
 		// require enough no of tokens
 		
 		// keep track of tokens sold
