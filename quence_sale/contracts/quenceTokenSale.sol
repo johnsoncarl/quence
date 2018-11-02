@@ -42,3 +42,6 @@ contract quenceTokenSale{
 	}
 
 }
+
+
+// Next is to setup up sale tokens
