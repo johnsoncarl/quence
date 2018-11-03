@@ -26,7 +26,7 @@ contract quenceToken{
 	mapping(address => uint256) public balanceOf;
 	mapping(address => mapping(address => uint256)) public allowance;
 
-	function quenceToken (uint256 _initialSupply) public{
+	constructor (uint256 _initialSupply) public{
 		balanceOf[msg.sender] = _initialSupply;
 		totalSupply = _initialSupply;	//	by ERC20 standards
 	}
@@ -42,7 +42,7 @@ contract quenceToken{
 		balanceOf[_to] += _value; 
 
 		// firing event Transfer
-		Transfer(msg.sender, _to, _value);
+		emit Transfer(msg.sender, _to, _value);
 		
 		// boolean should be returned
 		return true;
@@ -56,7 +56,7 @@ contract quenceToken{
 		allowance[msg.sender][_spender] = _value;
 
 		// firing Approval event
-		Approval(msg.sender, _spender, _value);
+		emit Approval(msg.sender, _spender, _value);
 
 
 		return true;
@@ -83,7 +83,7 @@ contract quenceToken{
 		allowance[_from][msg.sender] -= _value;
 		
 		// transfer event
-		Transfer(_from, _to, _value);
+		emit Transfer(_from, _to, _value);
 		
 		// return booleaj n j
 		return true;
