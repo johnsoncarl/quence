@@ -58,12 +58,22 @@ contract('quenceTokenSale', function(accounts){
 		
 		}).then(function(amount){
 			assert.equal(amount.toNumber(), numberOfTokens, 'increments the no of tokens sold');
-		
+			return tokenInstance.balanceOf(buyer);
+
+		}).then(function(balance){
+			assert.equal(balance.toNumber(), numberOfTokens);
+			return tokenInstance.balanceOf(tokenSaleInstance.address);
+
+		}).then(function(balance){
+
+			assert.equal(balance.toNumber(), tokensAvailable - numberOfTokens);
 			// trying to buy tokens different from original ether value , to prevent client from underpaying
 			return tokenSaleInstance.buyTokens(numberOfTokens , { from : buyer , value : 1 });
+		
 		}).then(assert.fail).catch(function(error){
 			assert(error.message.indexOf("revert") >= 0 , 'msg.value must have equal no in wei');
 			return tokenSaleInstance.buyTokens(800000, { from : buyer, value : 800000*tokenPrice });		
+		
 		}).then(assert.fail).catch(function(error){
 			assert(error.message.indexOf("revert") >= 0 , 'cannot purchase more tokens than available');
 		});
