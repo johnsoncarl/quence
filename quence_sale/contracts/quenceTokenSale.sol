@@ -50,6 +50,7 @@ contract quenceTokenSale{
 		require( msg.sender == admin);
 
 		// transfer the remaining token back to admin on ending sale
+		require(tokenContract.transfer(admin, tokenContract.balanceOf(this)));
 
 		// destroying contract
 	}
