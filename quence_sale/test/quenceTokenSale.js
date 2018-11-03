@@ -36,7 +36,7 @@ contract('quenceTokenSale', function(accounts){
 			// creating  quence token instance
 			tokenInstance = instance;
 
-			return tokenSaleInstance.deployed();
+			return quenceTokenSale.deployed();
 
 		}).then(function(instance){
 			// creating quence token sale instance
@@ -63,7 +63,7 @@ contract('quenceTokenSale', function(accounts){
 //			return tokenSaleInstance.buyTokens(numberOfTokens , { from : buyer , value : 1 });
 //		}).then(assert.fail).catch(function(error){
 //			assert(error.message.indexOf("revert") >= 0 , 'msg.value must have equal no in wei');
-			return tokenSaleInstance.buyTokens(800000, { from : buyer, value : numberOfTokens*tokenPrice });		
+			return tokenSaleInstance.buyTokens(800000, { from : buyer, value : 800000*tokenPrice });		
 		}).then(assert.fail).catch(function(error){
 			assert(error.message.indexOf("revert") >= 0 , 'cannot purchase more tokens than available');
 		});
