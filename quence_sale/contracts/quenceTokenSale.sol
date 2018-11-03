@@ -42,6 +42,18 @@ contract quenceTokenSale{
 		require(tokenContract.transfer(msg.sender, _numberOfTokens));
 	}
 
+
+	// Ending Sale function
+	function endSale() public {
+
+		// requiring admin
+		require( msg.sender == admin);
+
+		// transfer amount to token back to admin on ending sale
+
+		// destroying contract
+	}
+
 }
 
 

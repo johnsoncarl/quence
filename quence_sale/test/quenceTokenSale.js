@@ -84,24 +84,22 @@ contract('quenceTokenSale', function(accounts){
 
 
 
-	it('facilitates the end of the token sale', function(){
+
+	it('facilitates the end of token Sale', function(){
 		return quenceToken.deployed().then(function(instance){
-			// creating  quence token instance
 			tokenInstance = instance;
-
 			return quenceTokenSale.deployed();
-
 		}).then(function(instance){
-			// creating quence token sale instance
 			tokenSaleInstance = instance;
-
-			// trying to end the sale from the side who is not an admin
-			return tokenSaleInstance.endSale({ from : buyer });	
+			return tokenSaleInstance.endSale( {from : buyer });
 		}).then(assert.fail).catch(function(error){
-			assert(error.message.indexOf("revert") >= 0 , 'Checking that the person ending sale must be an admin');
-
+			assert(error.message.indexOf('revert') >= 0 , 'test for must be an admin');
+			// now trying to end Sale by an admin
+			return tokenSaleInstance.endSale( {from : admin });
+		}).then(function(receipt){
+			// receipt
 		})
-
-	});
+		
+	})
 
 });
