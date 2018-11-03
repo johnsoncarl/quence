@@ -39,6 +39,7 @@ contract quenceTokenSale{
 		Sell(msg.sender, _numberOfTokens);
 		
 		// require transfer successful
+		require(tokenContract.transfer(msg.sender, _numberOfTokens));
 	}
 
 }
