@@ -100,11 +100,10 @@ contract('quenceTokenSale', function(accounts){
 			return tokenInstance.balanceOf(admin);
 		}).then(function(balance){
 			assert.equal(balance.toNumber(), 999990);
-			return tokenSaleInstance.tokenPrice();
-		}).then(function(price){
-			assert.equal(price.toNumber(), 0, 'resets the token price');
-		})
-		
-	})
+			
+			balance = web3.eth.getBalance(tokenSaleInstance.address)
+      		assert.equal(balance.toNumber(), 0);
+		});
+	});
 
 });
