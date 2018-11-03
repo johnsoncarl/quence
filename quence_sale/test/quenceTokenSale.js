@@ -97,7 +97,9 @@ contract('quenceTokenSale', function(accounts){
 			// now trying to end Sale by an admin
 			return tokenSaleInstance.endSale( {from : admin });
 		}).then(function(receipt){
-			// receipt
+			return tokenInstance.balanceOf(admin);
+		}).then(function(balance){
+			assert.equal(balance.toNumber(), 999990);
 		})
 		
 	})

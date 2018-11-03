@@ -49,7 +49,7 @@ contract quenceTokenSale{
 		// requiring admin
 		require( msg.sender == admin);
 
-		// transfer amount to token back to admin on ending sale
+		// transfer the remaining token back to admin on ending sale
 
 		// destroying contract
 	}
