@@ -53,7 +53,7 @@ contract quenceTokenSale{
 		require(tokenContract.transfer(admin, tokenContract.balanceOf(this)));
 
 		// destroying contract
-		selfdestruct(admin);
+		admin.transfer(address(this).balance);
 	}
 
 }
