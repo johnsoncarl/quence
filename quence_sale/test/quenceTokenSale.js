@@ -101,7 +101,7 @@ contract('quenceTokenSale', function(accounts){
 		}).then(function(balance){
 			assert.equal(balance.toNumber(), 999990);
 			
-			balance = web3.eth.getBalance(tokenSaleInstance.address)
+			balance = web3.eth.getBalance(tokenSaleInstance.address);
       		assert.equal(balance.toNumber(), 0);
 		});
 	});
